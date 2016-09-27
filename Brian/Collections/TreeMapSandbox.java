@@ -29,11 +29,15 @@ public class TreeMapSandbox {
 
         // Happy paths
 
-        // Prints all the values of the colorsTreeMap
+        /* Prints all the values of the colorsTreeMap
+        * to make sure the values were added
+        */
         System.out.println("Valid tree map"
                 + colorsTreeMap);
 
-        // Gets the first key from the the colorsTreeMap
+        /* Gets the first key from the the colorsTreeMap
+        *  and prints it.
+        */
         try {
             System.out.println("First key: "
                     + colorsTreeMap.firstKey());
@@ -42,7 +46,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Gets the first entry of the colorsTreeMap
+        /* Gets the first key and value of the colorsTreeMap
+        *  and prints it
+        */
         try {
             System.out.println("First entry: "
                     + colorsTreeMap.firstEntry());
@@ -51,7 +57,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Gets the 2nd value from the colorsTreeMap
+        /* Gets the 2nd value from the colorsTreeMap
+        *  and prints it
+        */
         try {
             System.out.println("Get the second value: "
                     + colorsTreeMap.get(2));
@@ -60,8 +68,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Check if the colorsTreeMap contains "yellow"
-        // and returns true because it exists in the colorsTreeMap
+        /* Check if the colorsTreeMap contains the String value
+        *  "yellow" and returns true because it exists in the colorsTreeMap
+        */
         try {
             System.out.println("Contains 'yellow': "
                     + colorsTreeMap.containsValue("yellow"));
@@ -70,8 +79,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Contains a key of '3' in the colorsTreeMap
-        // and returns true because there is a '3' as a key
+        /* Checks if the colorsTreeMap contains a key of '3' 
+        *  and returns true because there is a '3' as a key
+        */
         try {
             System.out.println("Contains a key of '3': "
                     + colorsTreeMap.containsKey(3));
@@ -89,10 +99,13 @@ public class TreeMapSandbox {
         catch (Exception e) {
             e.printStackTrace();
         }
+        
         /* Nasty paths */
 
-        // Add a key with a null value adds a key with a null value
-        // Added key with "null" as value.
+        /* Adds a key with a null value to the colorsTreeMap 
+        *  and prints all the keys and values to make sure
+        *  the new key with a null value was added
+        */
         try {
             colorsTreeMap.put(5, null);
             System.out.println("Adds key with null value: "
@@ -102,8 +115,10 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Adds an null key and color value to the TreeMap
-        // NullPointerException
+        /* Tries to add an null key and color value to the colorsTreeMap
+        *  and throws a NullPointerException because it cannot have
+        *  null key
+        */
         try {
             System.out.println("Add a null key and color value to the TreeMap: "
                     +colorsTreeMap.put(null, "brown"));
@@ -112,8 +127,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Gets a value from a key that does not exist.
-        // Returns null
+        /* Gets a value from a key that does not exist in the colorsTreeMap.
+        *  Returns null because there is not a 10th key
+        */
         try {
             System.out.println("Get a value from a non-existing key: "
                     +colorsTreeMap.get(10));
@@ -122,8 +138,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Add a key and value that already exist
-        // Did not do anything because it cannot have duplicates
+        /* Tries to add a key and value that already exists in the colorsTreeMap.
+        *  It doesn't add it because it cannot have duplicates
+        */
         try {
             colorsTreeMap.put(1, "blue");
             System.out.println("Add a key and value that already exist: "
@@ -133,8 +150,10 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Replace a null key with null value
-        // NullPointerException
+        /* Tries to replace a null key with null value in the colorsTreeMap
+        *  and throws a NullPointerException because there is not a null
+        *  key because it cannot have null keys.
+        */
         try {
             colorsTreeMap.replace(null, null);
             System.out.println("Replace a null key with null value: "
@@ -144,8 +163,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Put non-existing Tree Map values to the TreeMap
-        // NullPointerException
+        /* Tries to put null keys and values to the colorsTreeMap
+        *  and throws a NullPointerException because it cannot have null keys
+        */
         try {
             colorsTreeMap.putAll(null);
             System.out.println("Put non-existing Tree Map values to the TreeMap: "
@@ -155,8 +175,9 @@ public class TreeMapSandbox {
             e.printStackTrace();
         }
 
-        // Remove a negative key and remove key and value out of bounds
-        // Returns null for both
+        /* Tries to remove a negative key and a key that is out of bounds.
+        *  Returns null for both
+        */
         try {
             System.out.println("Remove with negative int: "
                     + colorsTreeMap.remove(-1));
