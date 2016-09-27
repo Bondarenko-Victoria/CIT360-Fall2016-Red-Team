@@ -11,7 +11,8 @@ public class HashMapSandbox {
 
         // Creates a HashMap called animalHashMap.
         HashMap<Integer, String> animalHashMap = new HashMap<>();
-        // Add keys and values to the animalHashMap
+        
+        // Adds keys and values to the animalHashMap
         animalHashMap.put(1, "dog");
         animalHashMap.put(2, "cat");
         animalHashMap.put(3, "dolphin");
@@ -19,27 +20,32 @@ public class HashMapSandbox {
 
         // Creates a HashMap called colorHashMap.
         HashMap<Integer, String> colorHashMap = new HashMap<>();
-        // Add keys and values to the colorHashMap.
+        
+        // Adds keys and values to the colorHashMap.
         animalHashMap.put(7, "black");
         animalHashMap.put(8, "gray");
         animalHashMap.put(9, "white");
         animalHashMap.put(10, "brown");
 
-        // Prints all values from the animalHashMap.
+        /* Prints all the keys with their respective values 
+        *from the animalHashMap.
+        */
         System.out.println("Valid Hashmap: " + animalHashMap);
 
-        // Creates arrayList called colorArrayList.
+        // Creates an arrayList called colorArrayList.
         ArrayList<String> colorArrayList = new ArrayList<>();
 
         /* Happy paths */
 
-        // Add values to the colorArrayList.
+        // Adds values to the colorArrayList.
         colorArrayList.add("brown");
         colorArrayList.add("gray");
         colorArrayList.add("black");
         colorArrayList.add("white");
 
-        // Adds a new key and value
+        /* Adds a new key and value to the animalHashMap
+        *  and prints all the keys and values 
+        */
         try {
             animalHashMap.put(5, "elephant");
             // Prints all values including the new key and value added.
@@ -50,7 +56,7 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Gets the 3rd key and value
+        // Gets the 3rd key and value and prints it
         try {
             System.out.println("Get the 3rd key and value: "
                     + animalHashMap.get(3));
@@ -69,8 +75,9 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Check if hashmap is empty and return false because
-        // it is not empty
+        /* Checks if the animalHashMap is empty and return false because
+        * it is not empty
+        */
         try {
             System.out.println("Check if the hashmap is empty: "
                     + animalHashMap.isEmpty());
@@ -79,8 +86,9 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Contains '4' as a key
-        // and returns true because '4' exists as a key and has value 'snake'
+        /* Looks for a fourth key in the animalHashMap
+        * and returns true because '4' exists as a key and has value 'snake'
+        */
         try {
             System.out.println("Contains key 4: "
                     + animalHashMap.containsKey(4));
@@ -89,7 +97,9 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Contains 'cat' as value and returns true because there is a 'cat' value
+        /* Looks for a specific value in the animalHashMap 
+        *  and returns true because there is a 'cat' value
+        */
         try {
             System.out.println("Contains value 'cat': "
                     + animalHashMap.containsValue("cat"));
@@ -98,7 +108,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Replaces the first value with 'tiger'
+        /* Replaces the first value 'dog' with 'tiger'
+        *  and prints all the keys and values to make sure
+        *  'dog' was replaced with 'tiger'
+        */
         try {
             animalHashMap.replace(1, "dog", "tiger");
             System.out.println("Replace the first value: "
@@ -108,8 +121,11 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Put all keys with each values from the
-        // colorHashMap into the animalHashMap
+        /* Puts all the values from the colorHashMap into the 
+        *  animalHashMap and prints all the keys and values
+        *  from the animalHashMap to make sure the values from the
+        *  colorHashMap were added to the animalHashMap
+        */
         try {
             animalHashMap.putAll(colorHashMap);
             System.out.println("Put all keys and values from " +
@@ -122,7 +138,10 @@ public class HashMapSandbox {
 
         /* Nasty paths */
 
-        // Adds a null key and a null value
+        /* Adds a null key and a null value to the animalHashMap 
+        *  and prints all the keys and values to make sure the new
+        *  key with its value was added
+        */
         try {
             animalHashMap.put(null, null);
             System.out.println("Add a null key with null value: "
@@ -132,7 +151,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Adds a new key with a null value
+        /* Adds a new key with a null value to the animalHashMap
+        *  and prints all they keys and values to make sure
+        *  the new key with a null value was added
+        */
         try {
             animalHashMap.put(6, null);
             System.out.println("Add a new key with a null value: "
@@ -142,7 +164,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Adds a null key with a value
+        /* Adds a null key with a value and prints all the 
+        *  keys and values to make sure the key with its value
+        *  was added
+        */
         try {
             animalHashMap.put(null, "bobcat");
             System.out.println("Add a null key with a value: "
@@ -152,8 +177,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Removes a null key and null value
-        // Does nothing because there is not a null key associated with a null value.
+        /* Tries to remove a null key and null value.
+        *  It doesn't remove it because there is not a null key 
+        *  associated with a null value.
+        */
         try {
             animalHashMap.remove(null, null);
             System.out.println("Removed a null key and null value: "
@@ -163,8 +190,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Remove a non-existing key with an empty value
-        // Does nothing because there is not an empty value associated with the 9th key.
+        /* Tries to remove a non-existing key with an empty value.
+        *  It doesn't remove it because there is not an empty value 
+        *  associated with the 9th key.
+        */
         try {
             animalHashMap.remove(9, "");
             System.out.println("Remove a non-existing key " +
@@ -174,8 +203,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Remove a non-existing key with an empty value
-        // Doesn't do anything because there is not a negative key associated with an empty value.
+        /* Tries to remove a non-existing key with an empty value.
+        *  It doesn't remove it because there is not a negative key 
+        *  associated with an empty value.
+        */
         try {
             animalHashMap.remove(-1, "");
             System.out.println("Remove a negative key with " +
@@ -185,10 +216,10 @@ public class HashMapSandbox {
             e.printStackTrace();
         }
 
-        // Pull non existing hashmap keys and values into
-        // the animalHashMap
-        // Does not do anything
-        // NullPointerException
+        /* Tries to put non existing hashmap keys and values into
+        * the animalHashMap. It doesn't add them and throws a NullPointerException
+        * because it doesn't know what to do and where to add the nulls.
+        */
         try {
             animalHashMap.putAll(null);
             System.out.println("Pull non existing hashmap keys " +
