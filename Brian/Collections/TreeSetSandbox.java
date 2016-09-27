@@ -10,17 +10,16 @@ public class TreeSetSandbox {
 
         // Creates a tree set called colorTreeSet
         TreeSet<String> colorTreeSet = new TreeSet<>();
-        // Adds values to the tree set.
+        
+        // Adds values to the colorTreeSet.
         colorTreeSet.add("blue");
         colorTreeSet.add("red");
         colorTreeSet.add("yellow");
         colorTreeSet.add("orange");
 
 
-        // Creates array called colorArrayList.
+        // Creates an arrayList called colorArrayList.
         ArrayList<String> colorArrayList = new ArrayList<>();
-
-        /* Happy paths */
 
         // Add values to the colorArrayList.
         colorArrayList.add("brown");
@@ -28,13 +27,14 @@ public class TreeSetSandbox {
         colorArrayList.add("black");
         colorArrayList.add("white");
 
-        // Happy path
+        // Happy paths
 
         // Prints all the values from the colorTreeSet.
         System.out.println("Valid treeSet" + colorTreeSet);
 
-        // Find if 'yellow' exists in the tree set
-        // and returns true because it exists
+        /* Looks for a specific string value 'yellow' 
+        *  in the colorTreeSet and prints true because it exists
+        */
         try{
             System.out.println("Yellow exists in the array list: "
                     + colorTreeSet.contains("yellow"));
@@ -43,8 +43,9 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Get the last value from the tree set.
-        // and returns 'yellow' which is the last value.
+        /* Get the last value from the colorTreeSet
+        *  and prints 'yellow' which is the last value.
+        */
         try{
             System.out.println("Get the last value from the tree set: "
                     + colorTreeSet.last());
@@ -53,8 +54,9 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Get the first value from the tree set.
-        // and returns 'blue' which is the first value.
+        /* Gets the first value from the tree set.
+        *  and prints 'blue' which is the first value.
+        */
         try{
             System.out.println("Get the first value from the tree set: "
                     + colorTreeSet.pollFirst());
@@ -63,8 +65,9 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Check if the tree set is empty.
-        // and returns false because it is not empty.
+        /* Checks if the tree set is empty.
+        *  and returns false because it is not empty.
+        */
         try{
             System.out.println("Check if tree set is empty: "
                     + colorTreeSet.isEmpty());
@@ -73,8 +76,9 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Check is the tree set contains 'black'
-        // and returns false because 'black' doesn't exist.
+        /* Checks if the tree set contains 'black' as a string
+        * value and returns false because 'black' doesn't exist.
+        */
         try{
             System.out.println("Check if 'black' exists: "
                     + colorTreeSet.contains("black"));
@@ -85,8 +89,9 @@ public class TreeSetSandbox {
 
         /* Nasty paths*/
 
-        // Add color that already exists.
-        // Did not do anything because it cannot have duplicates.
+        /* Tries to add a string value that already exists.
+        *  It didn't add it because it cannot have duplicates.
+        */
         try{
             System.out.println("Add color that already exists: "
                     + colorTreeSet.add("blue") + colorTreeSet);
@@ -95,8 +100,10 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Removes a value that doesn't exist
-        // and returns false
+        /* Tries to remove a value that doesn't exist in the colorTreeSet
+        *  and returns false because the string value
+        *  'gray' doesn't exist.
+        */
         try{
             System.out.println("Remove value that doesn't exist: "
                     + colorTreeSet.remove("gray"));
@@ -105,7 +112,11 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Merges colorArrayList into the TreeSet
+        /* Merges colorArrayList into the colorTreeSet
+        *  and prints all the keys and values
+        *  of the colorTreeSet which now includes the values
+        *  from the colorArrayList.
+        */
         try{
             colorTreeSet.addAll(colorArrayList);
             System.out.println("Merge : "
@@ -115,7 +126,10 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Removes all values of the colorArrayList from the colorTreeSet
+        /* Removes all values of the colorArrayList from the colorTreeSet
+        *  and prints the values to make sure the values that were merged 
+        *  from the colorArrayList were removed from the colorTreeSet.
+        */
         try{
             colorTreeSet.removeAll(colorArrayList);
             System.out.println("Remove all values of the " +
@@ -126,9 +140,10 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        /* Nasty Paths */
-
-        // Adds empty string to the tree set to the beginning.
+        /* Adds an empty string to the beginning of the colorTreeSet
+        *  and prints all the values to make sure the empty string was
+        *  added
+        */
         try{
             colorTreeSet.add("");
             System.out.println("Add empty string to the tree set: "
@@ -138,7 +153,9 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Removes empty string to the tree set.
+        /* Removes the empty string from the colorTreeSet and prints
+        *  all the values to make sure the empty string was removed
+        */
         try{
             colorTreeSet.remove("");
             System.out.println("Remove empty string to the tree set: "
@@ -148,8 +165,10 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Adding a null value to the tree set.
-        // NullPointerException
+        /* Tries to add a null value to the tree set.
+        *  Throws a NullPointerException because it cannot have
+        *  null values
+        */
         try {
             System.out.println("Add null to the tree set: "
                     + colorTreeSet.add(null));
@@ -158,8 +177,10 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Remove null value from the tree set.
-        // NullPointerException
+        /* Removes a null value from the tree set.
+        *  and throws a NullPointerException because
+        *  there is not a null value because it cannot have null values
+        */
         try{
             System.out.println("Remove null value from the tree set: "
                     + colorTreeSet.remove(null));
@@ -168,8 +189,9 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Add all values from an empty tree set to the colorTreeSet.\
-        // NullPointerException
+        /* Tries to add all null values to the colorTreeSet.
+        *  and throws a NullPointerException because it cannot have null values
+        */
         try{
             System.out.println("Add all values from a null tree set: "
                     + colorTreeSet.addAll(null));
@@ -178,8 +200,10 @@ public class TreeSetSandbox {
             e.printStackTrace();
         }
 
-        // Remove all null values from the tree set
-        // NullPointerException
+        /* Tries to remove all null values from the tree set
+        *  and throws a NullPointerException because it doesn't have
+        *  null values since it cannot have null values
+        */
         try{
             System.out.println("Remove all null values from the tree set: "
                     + colorTreeSet.removeAll(null));
