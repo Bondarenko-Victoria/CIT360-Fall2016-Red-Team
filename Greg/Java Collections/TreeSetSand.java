@@ -9,6 +9,8 @@ public class TreeSetSand {
         contains();
         removeNon();
         addDouble();
+        cloneTree();
+        lastElement();
     }
 
     public static void addToTreeSet()
@@ -72,7 +74,7 @@ public class TreeSetSand {
         System.out.println(tsInt.contains(8));
     }
 
-    // Happy Path - Remove something that doesnt exist
+    // Nasty Path - Remove something that doesn't exist
     public static void removeNon()
     {
         try {
@@ -90,7 +92,7 @@ public class TreeSetSand {
         }
     }
 
-    // Happy Path - Adding Double. only keeps one
+    // Nasty Path - Adding Double. only keeps one
     public static void addDouble()
     {
         try {
@@ -107,4 +109,47 @@ public class TreeSetSand {
 
         }
     }
+
+    // Happy Path - Clone a TreeSet
+    public static void cloneTree()
+    {
+        try {
+            TreeSet<String> tsInt = new TreeSet();
+            tsInt.add("a");
+            tsInt.add("b");
+            tsInt.add("c");
+            tsInt.add("d");
+
+            TreeSet clone = (TreeSet)tsInt.clone();
+
+            System.out.println("Print Clone of TreeSet");
+            System.out.println(clone);
+        }catch(Exception e)
+        {
+            System.out.println("Error: Cant mix up char and string types");
+
+        }
+    }
+
+    // Happy Path - Return last element (usually highest)
+    public static void lastElement()
+    {
+        try {
+            TreeSet<Integer> tsInt = new TreeSet();
+            tsInt.add(1);
+            tsInt.add(10);
+            tsInt.add(50);
+            tsInt.add(99);
+
+            System.out.println("Return last (highest) element of set");
+            System.out.println(tsInt);
+            System.out.println(tsInt.last());
+
+        }catch(Exception e)
+        {
+            System.out.println("Error: Cant return last element");
+
+        }
+    }
+
 }

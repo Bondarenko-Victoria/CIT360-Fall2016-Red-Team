@@ -49,7 +49,7 @@ public class HashMapSand {
         }
     }
 
-    // Happy Path - Remove item that doesn't exist
+    // Nasty Path - Remove item that doesn't exist
     public static void removeNon()
     {
         try {
@@ -63,7 +63,7 @@ public class HashMapSand {
         }
     }
 
-    // Happy Path - Add Objects to Map
+    // Happy Path - Add Objects to Map - get map item by key
     public static void addObj()
     {
         try {
@@ -102,7 +102,7 @@ public class HashMapSand {
         }
     }
 
-    // Happy Path - Null Value & Empty String
+    // Nasty Path - Null Value & Empty String
     public static void nullValue()
     {
         try {
