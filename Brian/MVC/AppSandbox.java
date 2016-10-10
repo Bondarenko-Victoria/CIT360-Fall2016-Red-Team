@@ -18,5 +18,11 @@ public class AppSandbox {
         ModelSandbox model = new ModelSandbox();
         // pass the model and the view to the Control constructor
         ControllerSandbox control = new ControllerSandbox(view, model);
+        
+         //NASTY PATH
+        /* You will get a NullPointerException if null is passed for the view and
+         * the model to the controller constructor
+         */
+        // ControllerSandbox control = new ControllerSandbox(null, null);
     }
 }
