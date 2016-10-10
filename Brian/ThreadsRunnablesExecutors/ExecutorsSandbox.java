@@ -23,6 +23,15 @@ public class ExecutorsSandbox {
                 RunnableSandbox runnable2 = new RunnableSandbox();
                 // The executor executes the new instance of the runnable thread.
                 anExecutor.execute(runnable2);
+                
+                // NASTY PATHS
+
+                // IllegalMonitorStateException
+                // anExecutor.wait(1000);
+
+
+                // You get a NullPointerException when you pass null to execute an executor.
+                // anExecutor.execute(null);
             }
         } catch (Exception e) {
             e.printStackTrace();
