@@ -52,10 +52,13 @@ public class ControllerSandbox {
         try {
             if (zpHash.containsKey(inputCity)) {
                 result = zpHash.get(inputCity).toString();
-            } else {
-                result = "No match found!";
             }
-        } catch (Exception e) {
+            if (inputCity.isEmpty()) {
+                result = "Please enter a city!";
+            }
+            else {
+                result = "No match found!";
+            } catch (Exception e) {
             e.printStackTrace();
         }
 
