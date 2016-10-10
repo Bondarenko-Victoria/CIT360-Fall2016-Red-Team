@@ -12,6 +12,15 @@ public class RunnableSandbox implements Runnable{
                     System.out.println("Thread ID: " + Thread.currentThread().getName());
                     // The thread goes to sleep
                     Thread.sleep(100);
+                    
+                    //NASTY PATH
+                      // NullPointerException when the thread holds a null lock.
+                      // Thread.holdsLock(null);
+
+                    // IllegalArgumentException: timeout value is negative when you pass
+                    // a negative timeout value to join the threads.
+                    //ThreadSandbox myThread = new ThreadSandbox();
+                    //myThread.join(-1);
                 }
             }
             catch(InterruptedException e) {
