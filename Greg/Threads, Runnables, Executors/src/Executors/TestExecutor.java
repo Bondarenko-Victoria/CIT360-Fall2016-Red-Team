@@ -12,14 +12,24 @@ public class TestExecutor {
 
     public static void main(String[] args) {
 
-        ExecutorService executor = new Executors.newFixedThreadPool(5);
+//        create executor that will run 5 runnables at a time
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+
         for (int i = 0; i < 10; i++) {
             Runnable worker = new WorkerThreadSand(" " + i);
             executor.execute(worker);
         }
         executor.shutdown();
-        while (!executor.isTerminated()) {
+
+//        nasty path for executor
+        try {
+            ExecutorService nastyExecutor = Executors.newSingleThreadExecutor();
+            nastyExecutor.execute(null);
+        }catch (Exception e){
+            System.out.println("Nulls don't work");
         }
+
+
         System.out.println("Finished all threads");
 
     }
