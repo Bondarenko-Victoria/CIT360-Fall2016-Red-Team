@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ServletSandbox:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/ServletSandbox_war</output-path>
+    <root id="archive" name="ServletSandbox_war.war">
+      <element id="artifact" artifact-name="ServletSandbox:war exploded" />
+    </root>
+  </artifact>
+</component>
