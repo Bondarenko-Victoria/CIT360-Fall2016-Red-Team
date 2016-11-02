@@ -9,27 +9,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "book_author", schema = "hibernate", catalog = "")
 public class BookAuthorEntity {
+    private int id;
     private int authorKey;
     private int bookKeyIsbn;
 
     @Id
-    @Column(name = "authorKey")
-    public int getAuthorKey() {
-        return authorKey;
+    @Column(name = "id")
+    public int getId() {
+        return id;
     }
 
-    public void setAuthorKey(int authorKey) {
-        this.authorKey = authorKey;
-    }
-
-    @Id
-    @Column(name = "bookKeyISBN")
-    public int getBookKeyIsbn() {
-        return bookKeyIsbn;
-    }
-
-    public void setBookKeyIsbn(int bookKeyIsbn) {
-        this.bookKeyIsbn = bookKeyIsbn;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -56,6 +47,26 @@ public class BookAuthorEntity {
         this.bookEntity = bookEntity;
     }
 
+    @Basic
+    @Column(name = "authorKey")
+    public int getAuthorKey() {
+        return authorKey;
+    }
+
+    public void setAuthorKey(int authorKey) {
+        this.authorKey = authorKey;
+    }
+
+    @Basic
+    @Column(name = "bookKeyISBN")
+    public int getBookKeyIsbn() {
+        return bookKeyIsbn;
+    }
+
+    public void setBookKeyIsbn(int bookKeyIsbn) {
+        this.bookKeyIsbn = bookKeyIsbn;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,6 +74,7 @@ public class BookAuthorEntity {
 
         BookAuthorEntity that = (BookAuthorEntity) o;
 
+        if (id != that.id) return false;
         if (authorKey != that.authorKey) return false;
         if (bookKeyIsbn != that.bookKeyIsbn) return false;
 
@@ -71,7 +83,8 @@ public class BookAuthorEntity {
 
     @Override
     public int hashCode() {
-        int result = authorKey;
+        int result = id;
+        result = 31 * result + authorKey;
         result = 31 * result + bookKeyIsbn;
         return result;
     }
