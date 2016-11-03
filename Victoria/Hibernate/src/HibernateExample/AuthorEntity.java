@@ -8,20 +8,21 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "author", schema = "hibernate", catalog = "")
+@Table(name = "author", schema = "hibernatevicky", catalog = "")
 public class AuthorEntity {
-    private int authorKey;
-    private String authorFirstName;
-    private String authorLastName;
+
+    private String AuthorFirstName;
+    private String AuthorLastName;
 
     @Id
-    @Column(name = "authorKey")
+    @Column(name = "AuthorKey")
+    private int AuthorKey;
     public int getAuthorKey() {
-        return authorKey;
+        return AuthorKey;
     }
 
     public void setAuthorKey(int authorKey) {
-        this.authorKey = authorKey;
+        this.AuthorKey = authorKey;
     }
 
     @OneToMany(mappedBy = "authorEntity")
@@ -40,21 +41,21 @@ public class AuthorEntity {
     @Basic
     @Column(name = "authorFirstName")
     public String getAuthorFirstName() {
-        return authorFirstName;
+        return AuthorFirstName;
     }
 
     public void setAuthorFirstName(String authorFirstName) {
-        this.authorFirstName = authorFirstName;
+        this.AuthorFirstName = authorFirstName;
     }
 
     @Basic
     @Column(name = "authorLastName")
     public String getAuthorLastName() {
-        return authorLastName;
+        return AuthorLastName;
     }
 
     public void setAuthorLastName(String authorLastName) {
-        this.authorLastName = authorLastName;
+        this.AuthorLastName = authorLastName;
     }
 
     @Override
@@ -64,10 +65,10 @@ public class AuthorEntity {
 
         AuthorEntity that = (AuthorEntity) o;
 
-        if (authorKey != that.authorKey) return false;
-        if (authorFirstName != null ? !authorFirstName.equals(that.authorFirstName) : that.authorFirstName != null)
+        if (AuthorKey != that.AuthorKey) return false;
+        if (AuthorFirstName != null ? !AuthorFirstName.equals(that.AuthorFirstName) : that.AuthorFirstName != null)
             return false;
-        if (authorLastName != null ? !authorLastName.equals(that.authorLastName) : that.authorLastName != null)
+        if (AuthorLastName != null ? !AuthorLastName.equals(that.AuthorLastName) : that.AuthorLastName != null)
             return false;
 
         return true;
@@ -75,9 +76,9 @@ public class AuthorEntity {
 
     @Override
     public int hashCode() {
-        int result = authorKey;
-        result = 31 * result + (authorFirstName != null ? authorFirstName.hashCode() : 0);
-        result = 31 * result + (authorLastName != null ? authorLastName.hashCode() : 0);
+        int result = AuthorKey;
+        result = 31 * result + (AuthorFirstName != null ? AuthorFirstName.hashCode() : 0);
+        result = 31 * result + (AuthorLastName != null ? AuthorLastName.hashCode() : 0);
         return result;
     }
 }

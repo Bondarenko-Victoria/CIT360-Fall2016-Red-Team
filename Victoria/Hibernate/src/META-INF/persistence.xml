@@ -7,12 +7,15 @@
         <class>HibernateExample.BookEntity</class>
         <class>HibernateExample.BookAuthorEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hibernate"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hibernatevicky"/>
+            <property name='hibernate.dialect' value='org.hibernate.dialect.MySQLDialect' />
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
 
             <property name="hibernate.archive.autodetection" value="class"/>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+            <!--<property name="hibernate.show_sql" value="true"/>-->
+            <!--<property name="hibernate.format_sql" value="true"/>-->
             <property name="hbm2ddl.auto" value="update"/>
 
         </properties>

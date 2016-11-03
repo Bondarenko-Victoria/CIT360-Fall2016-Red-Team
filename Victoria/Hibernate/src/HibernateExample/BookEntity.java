@@ -8,21 +8,22 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "book", schema = "hibernate", catalog = "")
+@Table(name = "book", schema = "hibernatevicky", catalog = "")
 public class BookEntity {
-    private int bookKeyIsbn;
-    private String bookPublisher;
-    private String bookTitle;
-    private int bookYear;
+
+    private String BookPublisher;
+    private String BookTitle;
+    private int BookYear;
 
     @Id
-    @Column(name = "bookKeyISBN")
+    @Column(name = "BookKeyISBN")
+    private int BookKeyISBN;
     public int getBookKeyIsbn() {
-        return bookKeyIsbn;
+        return BookKeyISBN;
     }
 
     public void setBookKeyIsbn(int bookKeyIsbn) {
-        this.bookKeyIsbn = bookKeyIsbn;
+        this.BookKeyISBN = bookKeyIsbn;
     }
 
     @OneToMany(mappedBy = "bookEntity")
@@ -37,33 +38,33 @@ public class BookEntity {
     }
 
     @Basic
-    @Column(name = "bookPublisher")
+    @Column(name = "BookPublisher")
     public String getBookPublisher() {
-        return bookPublisher;
+        return BookPublisher;
     }
 
     public void setBookPublisher(String bookPublisher) {
-        this.bookPublisher = bookPublisher;
+        this.BookPublisher = bookPublisher;
     }
 
     @Basic
-    @Column(name = "bookTitle")
+    @Column(name = "BookTitle")
     public String getBookTitle() {
-        return bookTitle;
+        return BookTitle;
     }
 
     public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
+        this.BookTitle = bookTitle;
     }
 
     @Basic
-    @Column(name = "bookYear")
+    @Column(name = "BookYear")
     public int getBookYear() {
-        return bookYear;
+        return BookYear;
     }
 
     public void setBookYear(int bookYear) {
-        this.bookYear = bookYear;
+        this.BookYear = bookYear;
     }
 
     @Override
@@ -73,21 +74,21 @@ public class BookEntity {
 
         BookEntity that = (BookEntity) o;
 
-        if (bookKeyIsbn != that.bookKeyIsbn) return false;
-        if (bookYear != that.bookYear) return false;
-        if (bookPublisher != null ? !bookPublisher.equals(that.bookPublisher) : that.bookPublisher != null)
+        if (BookKeyISBN != that.BookKeyISBN) return false;
+        if (BookYear != that.BookYear) return false;
+        if (BookPublisher != null ? !BookPublisher.equals(that.BookPublisher) : that.BookPublisher != null)
             return false;
-        if (bookTitle != null ? !bookTitle.equals(that.bookTitle) : that.bookTitle != null) return false;
+        if (BookTitle != null ? !BookTitle.equals(that.BookTitle) : that.BookTitle != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = bookKeyIsbn;
-        result = 31 * result + (bookPublisher != null ? bookPublisher.hashCode() : 0);
-        result = 31 * result + (bookTitle != null ? bookTitle.hashCode() : 0);
-        result = 31 * result + bookYear;
+        int result = BookKeyISBN;
+        result = 31 * result + (BookPublisher != null ? BookPublisher.hashCode() : 0);
+        result = 31 * result + (BookTitle != null ? BookTitle.hashCode() : 0);
+        result = 31 * result + BookYear;
         return result;
     }
 }
