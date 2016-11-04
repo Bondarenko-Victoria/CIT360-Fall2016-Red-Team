@@ -9,6 +9,7 @@ public class Main {
 
 //        Create application controller
         AppController controller = new AppController();
+
         Scanner input = new Scanner(System.in);
 
         System.out.println("*****Welcome to Aptive Environmental*****");
