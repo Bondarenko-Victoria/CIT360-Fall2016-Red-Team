@@ -6,6 +6,7 @@ package ACP;
 public class ServicePro implements Handler {
 
     public void list(){
+        System.out.println("Here are our available Service Professionals.");
         System.out.println("---- Aptive Service Professionals ----");
         System.out.println("Greg Hall");
         System.out.println("Brandon Morris");

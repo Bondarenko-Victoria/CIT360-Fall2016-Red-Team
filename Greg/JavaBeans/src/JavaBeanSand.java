@@ -13,7 +13,6 @@ public class JavaBeanSand implements Serializable {
     private int zipCode;
 
     JavaBeanSand(){
-
     }
 
     public String getName() {

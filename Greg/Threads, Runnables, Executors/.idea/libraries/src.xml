@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="src">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://C:/Android/android-sdk-windows/tools/apps/SdkController/src" />
+      <root url="file://C:/Android/android-sdk-windows/tools/proguard/examples/annotations/examples" />
+      <root url="file://C:/Android/android-sdk-windows/tools/proguard/examples/annotations/src" />
+    </SOURCES>
+  </library>
+</component>

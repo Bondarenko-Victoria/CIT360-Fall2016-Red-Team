@@ -1,17 +1,27 @@
 package Handlers;
 
 
+import javax.xml.ws.handler.Handler;
+import javax.xml.ws.handler.MessageContext;
+
 /**
  * Created by gvh57 on 10/19/2016.
  */
-public class HandlerMain {
+public class HandlerMain implements Handler {
 
-    public static void main(String[] args) {
+    @Override
+    public boolean handleMessage(MessageContext context) {
+        return false;
+    }
 
-        ThreadSand thread1 = new ThreadSand("Thread1");
+    @Override
+    public boolean handleFault(MessageContext context) {
+        return false;
+    }
 
-        ThreadSand thread2 = new ThreadSand("Thread2");
-
+    @Override
+    public void close(MessageContext context) {
 
     }
+
 }

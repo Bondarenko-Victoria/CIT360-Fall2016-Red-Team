@@ -6,6 +6,7 @@ package ACP;
 public class SalesRep implements Handler {
 
     public void list(){
+        System.out.println("\nYou may have encountered one of the following Sales Representatives.");
         System.out.println("---- Aptive Sales Representatives ----");
         System.out.println("Tom Hopkins");
         System.out.println("Zig Ziglar");
