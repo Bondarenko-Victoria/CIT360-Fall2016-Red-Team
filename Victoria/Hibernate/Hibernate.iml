@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="NewPersistenceUnit" value="3796dc5b-41cd-4a6b-a681-79d27e330083" />
+          <factory-entry name="NewPersistenceUnit" value="67681e1f-d746-4b3b-a221-abf3b54d7daa" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
@@ -22,6 +22,6 @@
     <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
     <orderEntry type="library" name="org.hibernate:hibernate-entitymanager:3.6.9.Final" level="project" />
     <orderEntry type="library" name="org.apache.tomcat:tomcat-catalina:7.0.30" level="project" />
-    <orderEntry type="library" name="mysql:mysql-connector-java:6.0.2" level="project" />
+    <orderEntry type="library" name="mysql:mysql-connector-java:5.1.39" level="project" />
   </component>
 </module>
