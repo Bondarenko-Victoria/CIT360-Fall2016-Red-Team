@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="httpclient-4.3.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/firebase4j-master/firebase4j-master/libs/httpclient-4.3.6.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/firebase4j-master/firebase4j-master/libs/httpcore-4.3.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
