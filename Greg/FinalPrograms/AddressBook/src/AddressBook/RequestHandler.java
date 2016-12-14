@@ -40,15 +40,30 @@ public class RequestHandler extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Firebase firebase = new Firebase();
 
-        try{
-            firebase.initialize();
-            ArrayList<Contact> addressBook = firebase.get();
-            request.setAttribute("addressBook", addressBook); // Will be available as ${addressBook} in JSP
-            request.getSession().setAttribute("addressBook", addressBook);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
 
-        }catch(Exception e){
-            System.out.println("didnt work");
+        if (request.getParameter("download").equals("download")){
+            try {
+                firebase.initialize();
+                ArrayList<Contact> addressBook = firebase.get();
+                DownloadThread download = new DownloadThread(addressBook);
+                download.run();
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+            } catch (Exception e) {
+                System.out.println("didnt work");
+            }
+
+        }else {
+            try {
+                firebase.initialize();
+                ArrayList<Contact> addressBook = firebase.get();
+                request.setAttribute("addressBook", addressBook); // Will be available as ${addressBook} in JSP
+                request.getSession().setAttribute("addressBook", addressBook);
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+            } catch (Exception e) {
+                System.out.println("didnt work");
+            }
         }
 
     }

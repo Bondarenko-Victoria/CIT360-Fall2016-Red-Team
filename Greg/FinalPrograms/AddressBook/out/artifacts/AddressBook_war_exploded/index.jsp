@@ -1,5 +1,4 @@
-<%@ page import="AddressBook.Contact" %>
-<%@ page import="java.util.ArrayList" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: gvh574
@@ -7,6 +6,8 @@
   Time: 10:08 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%--<%@ taglib prefix="c"--%>
+           <%--uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
@@ -89,6 +90,14 @@
       <button type="submit" name="submit">Submit</button>
   </form>
 
+
+  <p>Download the Address Book</p>
+  <form action="RequestHandler" method="GET" >
+      <button type="submit" name="download" value="download">Download</button>
+  </form>
+
+
+  <%--<c:out value="hello" />--%>
   <%--<!--  This series of loops all contacts retrieved   -->--%>
   <%--<%--%>
       <%--ArrayList<Contact> s = (ArrayList) session.getAttribute("addressBook");--%>
