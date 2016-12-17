@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "18459146664",
+    "firebase_url": "https://monthlybudget-cf129.firebaseio.com",
+    "project_id": "monthlybudget-cf129",
+    "storage_bucket": "monthlybudget-cf129.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18459146664:android:1dd9f76dc450f768",
+        "android_client_info": {
+          "package_name": "com.example.brian.monthlybudget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18459146664-jq8o5ndf0dh0evakm6k7i2sq80f249qb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB17rZDlwnqCTEZzmF988sjZ146YR_PUeo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
